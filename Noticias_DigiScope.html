@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Noticias</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+    
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f6fb;
+            color: #1d2939;
+        }
+
+        /* ENCABEZADO */
+        header {
+            background: linear-gradient(135deg, #005bea, #003b95);
+            color: white;
+        }
+
+        .top-bar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #8fd3ff;
+        }
+
+        .fecha {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* MENU */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        nav ul {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            list-style: none;
+            overflow-x: auto;
+        }
+
+        nav li a {
+            display: block;
+            padding: 16px 20px;
+            text-decoration: none;
+            color: #0046ad;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav li a:hover {
+            background-color: #005bea;
+            color: white;
+        }
+
+        /* CONTENEDOR */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* NOTICIA PRINCIPAL */
+        .principal {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .noticia-principal {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .imagen-principal {
+            height: 90px;
+            background: linear-gradient(135deg, #087cff, #002f80);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+           
+        }
+
+        .contenido-principal {
+            padding: 25px;
+        }
+
+        .categoria {
+            display: inline-block;
+            background-color: #005bea;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .contenido-principal h1 {
+            color: #003b95;
+            font-size: 32px;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .contenido-principal p {
+            color: #667085;
+            line-height: 1.6;
+        }
+
+        .leer-mas {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 11px 18px;
+            background-color: #005bea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .leer-mas:hover {
+            background-color: #003b95;
+        }
+
+        /* NOTICIAS LATERALES */
+        .ultimas {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .ultimas h2 {
+            color: #003b95;
+            border-bottom: 3px solid #005bea;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .mini-noticia {
+            display: block;
+            padding: 15px 0;
+            border-bottom: 1px solid #e4e7ec;
+            text-decoration: none;
+        }
+
+        .mini-noticia:last-child {
+            border-bottom: none;
+        }
+
+        .mini-noticia span {
+            color: #005bea;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .mini-noticia h3 {
+            font-size: 16px;
+            margin-top: 5px;
+            color: #344054;
+        }
+
+        /* TITULO SECCION */
+        .titulo-seccion {
+            color: #003b95;
+            font-size: 26px;
+            margin-bottom: 20px;
+            border-left: 5px solid #005bea;
+            padding-left: 12px;
+        }
+
+        /* GRID DE NOTICIAS */
+        .noticias {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .card-img {
+            height: 160px;
+            background: linear-gradient(135deg, #1e90ff, #0046ad);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            color: white;
+        }
+
+        .card-content {
+            padding: 18px;
+        }
+
+        .card-content small {
+            color: #005bea;
+            font-weight: bold;
+        }
+
+        .card-content h3 {
+            margin: 8px 0;
+            color: #003b95;
+            font-size: 19px;
+        }
+
+        .card-content p {
+            color: #667085;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .card-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: #005bea;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* PIE DE PAGINA */
+        footer {
+            margin-top: 50px;
+            background-color: #003b95;
+            color: white;
+            padding: 35px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer h2 {
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #c9dcff;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+
+            .top-bar {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+
+            .principal {
+                grid-template-columns: 1fr;
+            }
+
+            .noticias {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contenido-principal h1 {
+                font-size: 26px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .noticias {
+                grid-template-columns: 1fr;
+            }
+
+            .imagen-principal {
+                height: 220px;
+            }
+
+            nav li a {
+                padding: 14px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+
+            
+           
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="top-bar">
+            <div class="logo">
+                NOTICIAS-<span>DigiScope</span>
+            </div>
+
+            <div class="fecha">Jueves, 13 de agosto de 2026</div>
+        </div>
+    </header>
+
+   
+
+    <!-- CONTENIDO -->
+    <main class="container">
+
+        <!-- NOTICIA PRINCIPAL -->
+        <section class="principal">
+
+            <article class="noticia-principal">
+    <div class="imagen-principal">📰</div>
+    <div class="contenido-principal">
+        <span class="categoria">ACTUALIDAD</span>
+        <h1>DigiScope presenta una nueva edición enfocada en el futuro digital</h1>
+        <p>La nueva edición de DigiScope reúne historias sobre tecnología, educación y los cambios que están transformando la vida cotidiana.</p>
+        <a href="noticia_principal.html" class="leer-mas">Leer noticia →</a>
+    </div>
+</article>
+
+            <!-- ULTIMAS NOTICIAS -->
+            <aside class="ultimas">
+
+                <h2>Últimas noticias</h2>
+
+                <a href="noticia_video_DigiScope.html" class="mini-noticia" target="_blank" rel="noopener noreferrer">
+        <span>09:00 AM</span>
+        <h3>Terremoto 6.4 Entrevista</h3>
+    </a>
+<a href="video4.html" class="mini-noticia" target="_blank" rel="noopener noreferrer">
+        <span>08:30 AM</span>
+        <h3>Videos sobre nuestro trabajo</h3>
+    </a>
+<a href="noticia_internacional.html" class="mini-noticia" target="_blank" rel="noopener noreferrer">
+        <span>08:00 AM</span>
+        <h3>Putin visita una isla disputada y Japón protesta.</h3>
+    </a>
+<a href="noticia_economia.html" class="mini-noticia" target="_blank" rel="noopener noreferrer">
+        <span>07:30 AM</span>
+        <h3>El precio del petróleo cae ante nuevas previsiones de demanda.</h3>
+    </a>
+
+            </aside>
+
+        </section>
+
+        <!-- SECCION NOTICIAS -->
+        <h2 class="titulo-seccion">
+            Noticias destacadas
+        </h2>
+
+        <section class="noticias">
+
+            <a href="noticia_tecnologia.html" class="card" target="_blank" rel="noopener noreferrer">
+    <div class="card-img">💻</div>
+    <div class="card-content">
+        <small>TECNOLOGÍA</small>
+        <h3>Microsoft reduce su presencia en China mientras la IA impulsa su negocio</h3>
+        <p>La compañía ha cerrado oficinas y empresas conjuntas en China durante los últimos años, mientras el auge de la inteligencia artificial mantiene abierta una oportunidad comercial.</p>
+        <span class="card-link">Leer noticia →</span>
+    </div>
+</a>
+
+            <a href="noticia_deportes.html" class="card" target="_blank" rel="noopener noreferrer">
+    <div class="card-img">⚽</div>
+    <div class="card-content">
+        <small>DEPORTES</small>
+        <h3>Seis federaciones árabes respaldan a Gianni Infantino</h3>
+        <p>Qatar y Marruecos están entre las federaciones que expresaron su apoyo al presidente de la FIFA de cara al liderazgo del organismo.</p>
+        <span class="card-link">Leer noticia →</span>
+    </div>
+</a>
+
+            <a href="noticia_internacional.html" class="card" target="_blank" rel="noopener noreferrer">
+    <div class="card-img">🌎</div>
+    <div class="card-content">
+        <small>INTERNACIONAL</small>
+        <h3>Rusia y Japón vuelven a cruzarse por las islas Kuriles</h3>
+        <p>La visita de Vladimir Putin a una isla en disputa con Japón provocó nuevas críticas del Gobierno japonés.</p>
+        <span class="card-link">Leer noticia →</span>
+    </div>
+</a>
+
+            <a href="noticia_economia.html" class="card" target="_blank" rel="noopener noreferrer">
+    <div class="card-img">📈</div>
+    <div class="card-content">
+        <small>ECONOMÍA</small>
+        <h3>El petróleo cae ante una perspectiva de menor demanda</h3>
+        <p>El crudo baja después de que aumentaran las reservas estadounidenses y se revisaran a la baja algunas previsiones de demanda para 2026.</p>
+        <span class="card-link">Leer noticia →</span>
+    </div>
+</a>
+
+            <a href="noticia_cultura.html" class="card" target="_blank" rel="noopener noreferrer">
+    <div class="card-img">🎨</div>
+    <div class="card-content">
+        <small>CULTURA</small>
+        <h3>Burgas será sede de Eurovisión 2027</h3>
+        <p>La ciudad búlgara de Burgas fue elegida para recibir el Festival de Eurovisión del próximo año, tras la victoria de Bulgaria en 2026.</p>
+        <span class="card-link">Leer noticia →</span>
+    </div>
+</a>
+
+            <a href="noticia_ciudad.html" class="card" target="_blank" rel="noopener noreferrer">
+    <div class="card-img">🏙️</div>
+    <div class="card-content">
+        <small>CIUDAD</small>
+        <h3>Bogotá mantiene su Festival de Verano con más de 60 actividades</h3>
+        <p>La programación del Festival de Verano 2026 continúa hasta el 31 de agosto con actividades deportivas, culturales y recreativas gratuitas.</p>
+        <span class="card-link">Leer noticia →</span>
+    </div>
+</a>
+
+</a>
+
+            <a href="index.html" class="card" target="_blank" rel="noopener noreferrer">
+    <div class="card-content">
+        <h3>volver</h3>
+    </div>
+</a>
+
+        </section>
+
+    </main>
+
+   
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <h2>Noticias</h2>
+                <p>Noticias actuales con enlaces a las fuentes originales.</p>
+            </div>
+
+            <div>
+
+                <p>© 2026 DigiScope | Revista Digital</p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

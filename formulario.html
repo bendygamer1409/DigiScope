@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Encuesta DigiScope</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf3ff;
+            margin: 0;
+        }
+
+        header {
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        form {
+            background-color: white;
+            width: 400px;
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #0066cc;
+        }
+
+        h2 {
+            color: #0066cc;
+        }
+
+        label {
+            color: #003d7a;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #80bfff;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #004c99;
+        }
+
+        .Volver{
+   background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>DigiScope</h1>
+        <p>Encuesta de gustos y preferencias</p>
+    </header>
+
+    <form>
+
+        <h2>Cuéntanos sobre ti</h2>
+
+        <label>Nombre:</label>
+        <input type="text" placeholder="Escribe tu nombre">
+
+        <label>Edad:</label>
+        <input type="number" placeholder="Escribe tu edad">
+
+        <label>¿Qué tipo de contenido te gusta más?</label>
+        <select>
+            <option>Noticias</option>
+            <option>Tecnología</option>
+            <option>Entretenimiento</option>
+            <option>Deportes</option>
+            <option>Cultura</option>
+            <option>Videojuegos</option>
+        </select>
+
+        <label>¿Qué formato prefieres?</label>
+        <select>
+            <option>Artículos</option>
+            <option>Videos</option>
+            <option>Imágenes</option>
+            <option>Entrevistas</option>
+        </select>
+
+        <label>¿Con qué frecuencia lees revistas digitales?</label>
+        <select>
+            <option>Todos los días</option>
+            <option>Varias veces por semana</option>
+            <option>Una vez por semana</option>
+            <option>Casi nunca</option>
+        </select>
+
+        <label>¿Qué tema te gustaría encontrar en DigiScope?</label>
+        <textarea rows="4" placeholder="Escribe tu respuesta"></textarea>
+
+        <label>Correo electrónico:</label>
+        <input type="email" placeholder="ejemplo@correo.com">
+
+        <button type="submit">Enviar encuesta</button>
+        <button type="reset">Limpiar</button>
+       <a class="Volver" href="index.html"> Volver</a>
+
+    </form>
+
+</body>
+
+</html>

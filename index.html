@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiScope</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbgQbUkl88gbVe4atGEdoPyJc2MrimM5VRsQ&s);
+            color: #333;
+        }
+
+        header{
+            background-color: #3b82f6;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        nav{
+            background-color: #1e3a8a;
+            text-align: center;
+            padding: 12px;
+        }
+
+        nav a{
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+        }
+
+        section{
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGdXm938JNz_dN7lgCBoVw8eCJBt1Gih3SoQ&s);
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h2{
+            color: #2563eb;
+        }
+
+        .objetivos li{
+            margin: 10px 0;
+        }
+
+        .valores{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .card{
+            background-color: #dbeafe;
+            padding: 15px;
+            border-radius: 10px;
+            width: 250px;
+        }
+
+        footer{
+            background-color: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .banner{
+            text-align: center;
+            padding: 20px;
+        }
+
+        .banner img{
+            width: 250px;
+        }
+        
+        .menu-desplegable{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.boton-menu{
+    background-color: #1e3a8a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contenido-menu{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    background-color: white;
+    min-width: 150px;
+    border-radius: 5px;
+}
+
+.contenido-menu a{
+    color: #333;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.contenido-menu a:hover{
+    background-color: #dbeafe;
+}
+
+.menu-desplegable:hover .contenido-menu{
+    display: flex;
+}
+
+.accesos{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.boton-acceso{
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.boton-acceso:hover{
+    background-color: #1e3a8a;
+    transform: translateY(-3px);
+}
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>DigiScope</h1>
+        <p>Historias que inspiran,contemido que conecta</p>
+        <p>Revista digital informativa y entretenida</p>
+
+    </header>
+
+    <nav>
+        <a href="#proyecto">Proyecto</a>
+        <a href="#objetivos">Objetivos</a>
+        <a href="#mision">Misión</a>
+        <a href="#vision">Visión</a>
+        <a href="#valores">Valores</a>
+    </nav>
+
+
+<div class="menu-desplegable">
+    <button class="boton-menu">Más Información ▼</button>
+
+    <div class="contenido-menu">
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contactos</a>
+        <a href="formulario.html">Formulario</a>
+        <a href="Noticias_DigiScope.html">Noticias</a>
+    </div>
+</div>
+
+
+    <div class="banner">
+        <img src="img/DigiScope.PNG" alt="">
+    </div>
+
+    <section id="proyecto">
+        <h2>¿Qué es DigiScope?</h2>
+
+        <p>
+            DigiScope es una revista digital creada para informar a toda la comunidad
+            de una manera más entretenida y dinámica. Utilizamos diferentes formas
+            de información como historietas, acertijos y contenido interactivo.
+        </p>
+
+        <p>
+            También apoyamos emprendimientos para ayudarlos a crecer y ser más
+            reconocidos.
+        </p>
+    </section>
+
+    <section>
+        <h2>Justificación</h2>
+
+        <p>
+            Queremos combatir la desinformación y los rumores falsos que se crean
+            diariamente. Nuestro objetivo es brindar información clara, verdadera
+            y confiable para toda la comunidad.
+        </p>
+    </section>
+
+    <section id="objetivos">
+        <h2>Objetivo General</h2>
+
+        <p>
+            Mantener informado al público de manera clara y concisa.
+        </p>
+
+        <h2>Objetivos Específicos</h2>
+
+        <ul class="objetivos">
+            <li>Ser considerados una fuente confiable.</li>
+            <li>Ser reconocidos como la mejor revista digital.</li>
+            <li>Mostrar transparencia en todos los temas.</li>
+            <li>Mantener información actualizada constantemente.</li>
+            <li>Tener buenas fuentes de información.</li>
+        </ul>
+    </section>
+
+    <section id="mision">
+        <h2>Misión</h2>
+
+        <p>
+            Brindar información clara, confiable y entretenida mediante una revista
+            digital innovadora, utilizando historietas, acertijos y contenido
+            interactivo. Además, apoyar emprendimientos para contribuir a su crecimiento.
+        </p>
+    </section>
+
+    <section id="vision">
+        <h2>Visión</h2>
+
+        <p>
+            Ser reconocidos como la revista digital más confiable, creativa e innovadora
+            de la comunidad, destacándonos por nuestra transparencia y apoyo constante
+            a los emprendimientos.
+        </p>
+    </section>
+
+    <section id="valores">
+        <h2>Valores Corporativos</h2>
+
+        <div class="valores">
+
+            <div class="card">
+                <h3>Transparencia</h3>
+                <p>Compartimos información clara y verificada.</p>
+            </div>
+
+            <div class="card">
+                <h3>Responsabilidad</h3>
+                <p>Informamos de manera ética y consciente.</p>
+            </div>
+
+            <div class="card">
+                <h3>Creatividad</h3>
+                <p>Usamos nuevas formas de comunicar.</p>
+            </div>
+
+            <div class="card">
+                <h3>Confiabilidad</h3>
+                <p>Queremos ser una fuente segura para todos.</p>
+            </div>
+
+            <div class="card">
+                <h3>Compromiso</h3>
+                <p>Mantenemos contenido actualizado y de calidad.</p>
+            </div>
+
+            <div class="card">
+                <h3>Innovación</h3>
+                <p>Implementamos ideas modernas e interactivas.</p>
+            </div>
+
+            <div class="card">
+                <h3>Apoyo al emprendimiento</h3>
+                <p>Ayudamos al crecimiento de negocios y proyectos.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 DigiScope | Revista Digital</p>
+    </footer>
+
+
+
+   
+</body>
+</html>

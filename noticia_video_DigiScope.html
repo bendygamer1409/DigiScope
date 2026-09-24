@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticia en Video | DigiScope</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f2f6fb;
+            color: #1d2939
+        }
+
+        header {
+            background: linear-gradient(135deg, #005bea, #003b95);
+            color: white
+        }
+
+        .top-bar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold
+        }
+
+        .logo span {
+            color: #8fd3ff
+        }
+
+        .fecha {
+            font-size: 14px
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 0 20px
+        }
+
+        .noticia {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, .08)
+        }
+
+        .encabezado-noticia {
+            padding: 30px
+        }
+
+        .categoria {
+            display: inline-block;
+            background: #005bea;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 12px
+        }
+
+        h1 {
+            color: #003b95;
+            font-size: 36px;
+            line-height: 1.2;
+            margin-bottom: 15px
+        }
+
+        .descripcion {
+            color: #667085;
+            font-size: 17px;
+            line-height: 1.6
+        }
+
+        .video-contenedor {
+            padding: 0 30px 30px
+        }
+
+        .video {
+            width: 100%;
+            height: 500px;
+            background: #111827;
+            border-radius: 10px;
+            overflow: hidden
+        }
+
+        .video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .contenido {
+            padding: 0 30px 30px
+        }
+
+        .contenido h2 {
+            color: #003b95;
+            margin-bottom: 12px
+        }
+
+        .contenido p {
+            color: #475467;
+            line-height: 1.7;
+            margin-bottom: 15px
+        }
+
+        .volver {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 11px 18px;
+            background: #005bea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold
+        }
+
+        .volver:hover {
+            background: #003b95
+        }
+
+        footer {
+            margin-top: 50px;
+            background: #003b95;
+            color: white;
+            padding: 30px 20px;
+            text-align: center
+        }
+
+        footer p {
+            color: #c9dcff;
+            margin-top: 6px
+        }
+
+        @media(max-width:600px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center
+            }
+
+            h1 {
+                font-size: 27px
+            }
+
+            .video {
+                height: 250px
+            }
+
+            .encabezado-noticia,
+            .video-contenedor,
+            .contenido {
+                padding-left: 20px;
+                padding-right: 20px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="top-bar">
+            <div class="logo">NOTICIAS-<span>DigiScope</span></div>
+            <div class="fecha">14 de agosto de 2026</div>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="noticia">
+
+            <div class="encabezado-noticia">
+                <span class="categoria">VIDEO</span>
+                <h1>Terremoto de magnitud 7,4 sacude a Colombia y deja una emergencia nacional</h1>
+                <p class="descripcion">
+                    Un fuerte terremoto de magnitud 7,4 sacudió a Colombia el 10 de agosto de 2026, con epicentro en San José del Palmar, Chocó. El movimiento fue sentido en diferentes regiones del país y provocó importantes daños en viviendas, edificios e infraestructura.
+                </p>
+            </div>
+
+            <div class="video-contenedor">
+
+                <div class="video">
+                    <video controls>
+                        <source src="img/WhatsApp Video 2026-08-13 at 11.30.28 AM.mp4" type="video/mp4">
+                        
+                    </video>
+                </div>
+            </div>
+
+            <div class="contenido">
+                <h2>Sobre esta noticia</h2>
+                <p>
+                    El terremoto ocurrió durante la mañana del lunes 10 de agosto y afectó principalmente zonas del occidente y centro del país. Ciudades como Cali, Pereira, Manizales, Armenia y Quibdó reportaron los efectos del movimiento.
+
+                    Desde el momento del sismo, organismos de emergencia y equipos de rescate trabajan en las zonas afectadas para atender a las personas damnificadas y evaluar los daños ocasionados en viviendas e infraestructura.
+
+                    Durante los días posteriores también se han registrado réplicas en el departamento del Chocó. Las autoridades continúan realizando labores de atención, mientras se actualizan los balances de personas afectadas y daños materiales.
+                </p>
+               
+                <a href="Noticias_DigiScope.html" class="volver">← Volver a DigiScope</a>
+            </div>
+
+        </article>
+    </main>
+
+    <footer>
+        <h2>DigiScope</h2>
+        <p>Información clara, rápida y creada para nuestra revista digital.</p>
+        <p>© 2026 DigiScope | Revista Digital</p>
+    </footer>
+
+</body>
+
+</html>

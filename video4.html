@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Videos | DigiScope</title>
+
+
+    <style>
+
+        /* CONFIGURACIÓN GENERAL */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            background-color: #f2f6fb;
+
+            color: #1d2939;
+
+        }
+
+
+        /* ENCABEZADO */
+
+        header {
+
+            background: linear-gradient(135deg, #005bea, #003b95);
+
+            color: white;
+
+        }
+
+
+        .top-bar {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 20px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+
+        .logo {
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+        }
+
+
+        .logo span {
+
+            color: #8fd3ff;
+
+        }
+
+
+        .fecha {
+
+            font-size: 14px;
+
+        }
+
+
+        /* CONTENEDOR PRINCIPAL */
+
+        .container {
+
+            max-width: 1200px;
+
+            margin: 35px auto;
+
+            padding: 0 20px;
+
+        }
+
+
+        /* ENCABEZADO DE LA PÁGINA */
+
+        .encabezado {
+
+            background-color: white;
+
+            border-radius: 12px;
+
+            padding: 30px;
+
+            margin-bottom: 25px;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+        }
+
+
+        .categoria {
+
+            display: inline-block;
+
+            background-color: #005bea;
+
+            color: white;
+
+            padding: 6px 12px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        h1 {
+
+            color: #003b95;
+
+            font-size: 36px;
+
+            line-height: 1.2;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .descripcion {
+
+            color: #667085;
+
+            line-height: 1.6;
+
+            font-size: 17px;
+
+        }
+
+
+        /* CUATRO VIDEOS */
+
+        .videos {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+
+        }
+
+
+        /* TARJETA */
+
+        .video-card {
+
+            background-color: white;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+
+        }
+
+
+        .video-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+
+        }
+
+
+        /* VIDEO */
+
+        .video-card video {
+
+            width: 100%;
+
+            height: 300px;
+
+            display: block;
+
+            background-color: #111827;
+
+            object-fit: cover;
+
+        }
+
+
+        /* INFORMACIÓN DEL VIDEO */
+
+        .video-content {
+
+            padding: 20px;
+
+        }
+
+
+        .video-content small {
+
+            color: #005bea;
+
+            font-weight: bold;
+
+        }
+
+
+        .video-content h2 {
+
+            color: #003b95;
+
+            font-size: 22px;
+
+            margin: 8px 0;
+
+        }
+
+
+        .video-content p {
+
+            color: #667085;
+
+            line-height: 1.5;
+
+            font-size: 14px;
+
+        }
+
+
+        /* INFORMACIÓN FINAL */
+
+        .informacion {
+
+            background-color: white;
+
+            margin-top: 25px;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+        }
+
+
+        .informacion h2 {
+
+            color: #003b95;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .informacion p {
+
+            color: #475467;
+
+            line-height: 1.7;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        /* BOTÓN VOLVER */
+
+        .volver {
+
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 11px 18px;
+
+            background-color: #005bea;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+
+        }
+
+
+        .volver:hover {
+
+            background-color: #003b95;
+
+        }
+
+
+        /* PIE DE PÁGINA */
+
+        footer {
+
+            margin-top: 50px;
+
+            background-color: #003b95;
+
+            color: white;
+
+            padding: 30px 20px;
+
+            text-align: center;
+
+        }
+
+
+        footer p {
+
+            color: #c9dcff;
+
+            margin-top: 6px;
+
+        }
+
+
+        /* CELULAR */
+
+        @media (max-width: 800px) {
+
+            .videos {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .video-card video {
+
+                height: 280px;
+
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            .top-bar {
+
+                flex-direction: column;
+
+                gap: 8px;
+
+                text-align: center;
+
+            }
+
+
+            h1 {
+
+                font-size: 28px;
+
+            }
+
+
+            .video-card video {
+
+                height: 230px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <div class="top-bar">
+
+            <div class="logo">
+
+                NOTICIAS-<span>DigiScope</span>
+
+            </div>
+
+
+            <div class="fecha">
+
+                20 de agosto de 2026
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- CONTENIDO -->
+
+    <main class="container">
+
+
+        <!-- TITULO -->
+
+        <section class="encabezado">
+
+            <span class="categoria">
+
+                VIDEOS
+
+            </span>
+
+
+            <h1>
+
+                Contenido audiovisual DigiScope
+
+            </h1>
+
+
+            <p class="descripcion">
+
+                En esta sección de DigiScope encontrarás cuatro videos
+
+                independientes sobre diferentes temas. Cada contenido
+
+                cuenta con su propio espacio para presentar información
+
+                de manera audiovisual.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- CUATRO VIDEOS -->
+
+        <section class="videos">
+
+
+
+            <!-- VIDEO 1 -->
+
+            <article class="video-card">
+
+
+                <!--
+
+                CAMBIA "video1.mp4" POR EL NOMBRE
+
+                DE TU PRIMER VIDEO.
+
+                -->
+
+                <video controls>
+
+                    <source src="img/saavedra.mp4" type="video/mp4">
+
+                    Tu navegador no puede reproducir este video.
+
+                </video>
+
+
+                <div class="video-content">
+
+                    <small>VIDEO 1</small>
+
+
+                    <h2>
+
+                        Invitacion
+
+                    </h2>
+
+
+                    <p>
+
+                       Te invitamos a que veas nuetras ultimas noticias
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- VIDEO 2 -->
+
+            <article class="video-card">
+
+
+                <video controls>
+
+                    <source src="img/gordo video.mp4" type="video/mp4">
+
+                    Tu navegador no puede reproducir este video.
+
+                </video>
+
+
+                <div class="video-content">
+
+                    <small>VIDEO 2</small>
+
+
+                    <h2>
+
+                        Presentacion Revista Digital
+
+                    </h2>
+
+
+                    <p>
+
+                        Presentacion de nuestro proyecto
+
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- VIDEO 3 -->
+
+            <article class="video-card">
+
+
+
+                <video controls>
+
+                    <source src="img/zabdi.mp4" type="video/mp4">
+
+                    Tu navegador no puede reproducir este video.
+
+                </video>
+
+
+                <div class="video-content">
+
+                    <small>VIDEO 3</small>
+
+
+                    <h2>
+
+                        Presentacion de uno de nuestros integrantes
+
+                    </h2>
+
+
+                    <p>
+
+                        Conoceras a nuestro presentador Camilo Daza
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- VIDEO 4 -->
+
+            <article class="video-card">
+
+                <video controls>
+
+                    <source src="img/video ana.mp4" type="video/mp4">
+
+                    Tu navegador no puede reproducir este video.
+
+                </video>
+
+
+                <div class="video-content">
+
+                    <small>VIDEO 4</small>
+
+
+                    <h2>
+
+                        Título del cuarto video
+
+                    </h2>
+
+
+                    <p>
+
+                        Escribe aquí una descripción breve
+
+                        explicando de qué trata el cuarto video.
+
+                    </p>
+
+                </div>
+
+            </article>
+    
+
+            <article class="video-card">
+
+
+                <video controls>
+
+                    <source src="img/video laguna.mp4" type="video/mp4">
+
+                    Tu navegador no puede reproducir este video.
+
+                </video>
+
+
+                <div class="video-content">
+
+                    <small>VIDEO 5</small>
+
+
+                    <h2>
+
+                        Título del cuarto video
+
+                    </h2>
+
+
+                    <p>
+
+                        Escribe aquí una descripción breve
+
+                        explicando de qué trata el cuarto video.
+
+                    </p>
+
+                </div>
+
+            </article>
+      
+
+            <article class="video-card">
+
+
+                <video controls>
+
+                    <source src="img/video zamora.mp4" type="video/mp4">
+
+                    Tu navegador no puede reproducir este video.
+
+                </video>
+
+
+                <div class="video-content">
+
+                    <small>VIDEO 6</small>
+
+
+                    <h2>
+
+                        Título del cuarto video
+
+                    </h2>
+
+
+                    <p>
+
+                        Escribe aquí una descripción breve
+
+                        explicando de qué trata el cuarto video.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="video-card">
+
+
+                <video controls>
+
+                    <source src="img/Noticias.mp4" type="video/mp4">
+
+                    Tu navegador no puede reproducir este video.
+
+                </video>
+
+
+                <div class="video-content">
+
+                    <small>VIDEO 7</small>
+
+
+                    <h2>
+
+                        Título del cuarto video
+
+                    </h2>
+
+
+                    <p>
+
+                        Escribe aquí una descripción breve
+
+                        explicando de qué trata el cuarto video.
+
+                    </p>
+
+                </div>
+
+            </article>
+          
+
+        </section>
+
+
+
+        <!-- INFORMACIÓN -->
+
+        <section class="informacion">
+
+
+            <h2>
+
+                Sobre esta sección
+
+            </h2>
+
+
+            <p>
+
+                Esta sección reúne cuatro contenidos audiovisuales
+
+                independientes. Cada uno para que conozcas mas acerca de nosotros como revista digital
+
+            </p>
+
+
+            
+
+            <a href="Noticias_DigiScope.html" class="volver">
+
+                ← Volver a DigiScope
+
+            </a>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+
+        <h2>
+
+            DigiScope
+
+        </h2>
+
+
+        <p>
+
+            Información clara, rápida y creada para nuestra revista digital.
+
+        </p>
+
+
+        <p>
+
+            © 2026 DigiScope | Revista Digital
+
+        </p>
+
+
+    </footer>
+
+
+</body>
+
+</html>
